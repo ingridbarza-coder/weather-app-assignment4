@@ -1,14 +1,4 @@
-:root {
-    --background: #f5f0ff;
-    --card: #ffffff;
-    --purple: #7c5cff;
-    --light-purple: #ece6ff;
-    --pink: #ff8fbd;
-    --text: #24202e;
-    --soft-text: #777181;
-    --error: #c73d5c;
-    --radius: 22px;
-}
+/* basic page style */
 
 * {
     box-sizing: border-box;
@@ -16,90 +6,95 @@
 
 body {
     margin: 0;
-    min-height: 100vh;
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #f5f0ff, #ffeef6);
-    color: var(--text);
+    background-color: #dceef8;
+    color: #243447;
+    min-height: 100vh;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    padding: 30px 20px;
+    padding: 20px;
 }
+
+
+/* main weather app */
 
 .weather-app {
-    width: 100%;
-    max-width: 600px;
+    width: 90%;
+    max-width: 650px;
 }
 
+
+/* title */
+
 .heading {
-    margin-bottom: 28px;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .small-title {
-    color: var(--purple);
-    font-size: 12px;
+    color: #527da3;
+    font-size: 13px;
     font-weight: bold;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     margin-bottom: 8px;
 }
 
 h1 {
-    font-size: 38px;
-    margin: 0 0 8px;
+    font-size: 34px;
+    margin: 8px 0;
 }
 
 .subtitle {
-    color: var(--soft-text);
-    margin: 0;
+    color: #617486;
+    margin-top: 5px;
 }
+
+
+/* city search */
 
 .search-form {
     display: flex;
-    gap: 10px;
-    margin-bottom: 22px;
+    gap: 8px;
+    margin-bottom: 25px;
 }
 
 .search-form input {
     flex: 1;
-    border: 2px solid var(--light-purple);
-    border-radius: 14px;
-    padding: 14px 16px;
-    font-size: 16px;
-    outline: none;
-    background: white;
+    padding: 12px;
+    border: 1px solid #9bb7cc;
+    border-radius: 6px;
+    font-size: 15px;
 }
 
 .search-form input:focus {
-    border-color: var(--purple);
+    outline: 2px solid #6b9ac4;
 }
 
 .search-form button {
+    padding: 12px 20px;
     border: none;
-    border-radius: 14px;
-    padding: 14px 22px;
-
-    background: var(--purple);
+    border-radius: 6px;
+    background-color: #527da3;
     color: white;
-
     font-size: 15px;
-    font-weight: bold;
     cursor: pointer;
-
-    transition: transform 180ms ease-out;
 }
 
 .search-form button:hover {
-    transform: scale(1.04);
+    background-color: #416b90;
 }
 
-.weather-card {
-    background: var(--card);
-    border-radius: var(--radius);
-    padding: 28px;
 
-    box-shadow: 0 15px 40px rgba(65, 50, 100, 0.12);
+/* weather result */
+
+.weather-card {
+    background-color: white;
+    border: 1px solid #c6d9e6;
+    border-radius: 10px;
+    padding: 25px;
 }
 
 .weather-top {
@@ -109,83 +104,92 @@ h1 {
 }
 
 .location-label {
-    color: var(--pink);
-    font-size: 11px;
+    color: #527da3;
+    font-size: 12px;
     font-weight: bold;
-    letter-spacing: 1.5px;
-    margin: 0 0 5px;
+    margin-bottom: 6px;
 }
 
 .weather-card h2 {
-    font-size: 27px;
     margin: 0;
+    font-size: 26px;
 }
 
 .description {
-    color: var(--soft-text);
+    color: #617486;
     text-transform: capitalize;
-    margin-top: 5px;
 }
 
 #weather-icon {
-    width: 90px;
-    height: 90px;
+    width: 85px;
+    height: 85px;
 }
 
 .temperature {
-    font-size: 64px;
+    font-size: 55px;
     font-weight: bold;
     margin: 20px 0;
 }
 
+
+/* extra weather information */
+
 .weather-details {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+    gap: 10px;
 }
 
 .detail {
-    background: var(--light-purple);
-    border-radius: 15px;
-    padding: 15px;
-
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
+    background-color: #eef6fa;
+    padding: 14px;
+    border-radius: 6px;
 }
 
 .detail span {
-    color: var(--soft-text);
+    display: block;
+    color: #617486;
     font-size: 13px;
+    margin-bottom: 6px;
 }
 
 .detail strong {
-    font-size: 17px;
+    font-size: 16px;
 }
 
+
+/* loading and error messages */
+
 .loading {
-    color: var(--purple);
-    font-weight: bold;
     text-align: center;
-    padding: 20px;
+    color: #527da3;
+    font-weight: bold;
+    padding: 15px;
 }
 
 .error-message {
-    background: #ffe7ed;
-    color: var(--error);
-    padding: 14px;
-    border-radius: 12px;
+    background-color: #fff0f0;
+    color: #a33b3b;
+    border: 1px solid #e4bcbc;
+    padding: 12px;
+    border-radius: 6px;
     text-align: center;
 }
+
+
+/* used by javascript to hide elements */
 
 .hidden {
     display: none;
 }
 
+
+/* mobile */
+
 @media (max-width: 550px) {
 
     h1 {
-        font-size: 30px;
+        font-size: 28px;
     }
 
     .search-form {
@@ -201,6 +205,6 @@ h1 {
     }
 
     .temperature {
-        font-size: 52px;
+        font-size: 45px;
     }
 }
