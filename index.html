@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="weather-app">
+
+        <div class="heading">
+            <p class="small-title">WEATHER DASHBOARD</p>
+            <h1>What's the weather like?</h1>
+            <p class="subtitle">
+                Search for a city and get the current weather.
+            </p>
+        </div>
+
+        <form id="search-form" class="search-form">
+            <input
+                type="text"
+                id="city-input"
+                placeholder="Enter a city..."
+                autocomplete="off"
+            >
+            <button type="submit">Search</button>
+        </form>
+
+        <p id="loading" class="loading hidden">
+            Loading weather...
+        </p>
+
+        <p id="error-message" class="error-message hidden"></p>
+
+        <section id="weather-card" class="weather-card hidden">
+
+            <div class="weather-top">
+                <div>
+                    <p class="location-label">CURRENT WEATHER</p>
+                    <h2 id="city-name"></h2>
+                    <p id="description" class="description"></p>
+                </div>
+
+                <img id="weather-icon" src="" alt="Weather icon">
+            </div>
+
+            <p id="temperature" class="temperature"></p>
+
+            <div class="weather-details">
+                <div class="detail">
+                    <span>Feels like</span>
+                    <strong id="feels-like"></strong>
+                </div>
+
+                <div class="detail">
+                    <span>Humidity</span>
+                    <strong id="humidity"></strong>
+                </div>
+
+                <div class="detail">
+                    <span>Wind speed</span>
+                    <strong id="wind-speed"></strong>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
